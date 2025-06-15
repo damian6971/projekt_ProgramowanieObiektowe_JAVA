@@ -1,0 +1,88 @@
+@startuml
+
+'=== Klasy z metodami ===
+class AdminPanelForm {
+    +AdminPanelForm()
+    +actionPerformed()
+}
+
+class DatabaseConnection {
+    +getConnection(): Connection
+}
+
+class DodawanieEdycjaSprzetu {
+    +DodawanieEdycjaSprzetu()
+    +dodajSprzet(): void
+    +zapiszEdycjeSprzetu(): void
+}
+
+class KlientPanelForm {
+    +KlientPanelForm(String)
+    +getIdUzytkownika(): int
+}
+
+class ListaSprzetuForm {
+    +ListaSprzetuForm()
+    +zaladujSprzet(): void
+    +usunSprzetPoId(): void
+    +buildQuery(): String
+}
+
+class MojeWypozyczeniaPanelKlientaForm {
+    +MojeWypozyczeniaPanelKlientaForm(String)
+    +generujParagonPDF(): void
+    +generujFakturaPDF(): void
+}
+
+class ProfilUzytkownikaForm {
+    +ProfilUzytkownikaForm(String)
+    +zapiszZmiany(): void
+    +usunKonto(): void
+}
+
+class RezerwacjaSprzetuForm {
+    +RezerwacjaSprzetuForm(int, String)
+    +obliczKoszt(): void
+    +zarezerwuj(): void
+}
+
+class ZarzadzanieRezerwacjami {
+    +ZarzadzanieRezerwacjami()
+    +loadOczekujaceRezerwacje(): void
+    +zaakceptujRezerwacje(): void
+    +odrzucRezerwacje(): void
+}
+
+class ZarzadzanieWypozyczeniamiAdmin {
+    +ZarzadzanieWypozyczeniamiAdmin()
+    +generujParagon(): void
+    +usunWypozyczenie(): void
+}
+
+class MenuForm {
+    +MenuForm()
+}
+
+class Main {
+    +main(): void
+}
+
+'=== Powiązania (wywołania między klasami) ===
+
+KlientPanelForm --> ProfilUzytkownikaForm
+KlientPanelForm --> RezerwacjaSprzetuForm
+KlientPanelForm --> MojeWypozyczeniaPanelKlientaForm
+DodawanieEdycjaSprzetu --> DatabaseConnection
+ZarzadzanieRezerwacjami --> DatabaseConnection
+ListaSprzetuForm --> DatabaseConnection
+ProfilUzytkownikaForm --> DatabaseConnection
+RezerwacjaSprzetuForm --> DatabaseConnection
+MojeWypozyczeniaPanelKlientaForm --> DatabaseConnection
+ZarzadzanieWypozyczeniamiAdmin --> DatabaseConnection
+AdminPanelForm --> ZarzadzanieRezerwacjami
+AdminPanelForm --> ListaSprzetuForm
+AdminPanelForm --> ZarzadzanieWypozyczeniamiAdmin
+MenuForm --> KlientPanelForm
+MenuForm --> AdminPanelForm
+
+@enduml

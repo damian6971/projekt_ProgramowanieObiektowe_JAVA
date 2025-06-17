@@ -1,0 +1,37 @@
+\chapter{Cele i środowisko pracy}
+\label{cha:Założenia, cele i środowisko pracy}
+Celem projektu było stworzenie aplikacji, która będzie funkcjonować jako wypożyczalnia sprzętu budowlanego. Wizja zakładała budowę narzędzia, które z jednej strony zapewnia klientom prostą i przejrzystą ścieżkę wypożyczenia, a z drugiej oferuje administratorowi rozbudowane centrum dowodzenia do zarządzania całym zapleczem wypożyczalni – od dostępności sprzętu i obsługi rezerwacji, po dane klientów oraz wystawianie paragonów. Aplikacja ma stanowić w pełni funkcjonalny system wspierający procesy wynajmu sprzętu.
+%---------------------------------------------------------------------------
+
+\section{Jakość i doświadczenie użtykownika}
+\label{sec:JakoscIdoswiadczenieUzytkownika}
+
+Oprócz oferowanych funkcji główną rolę odgrywa jakość interakcji użytkownika z systemem. Aplikacja została zaprojektowana z naciskiem na prostotę i niezawodność działania. Interfejs graficzny oparty o bibliotekę Swing zapewnia przejrzystość i łatwą nawigację. Reakcje systemu są natychmiastowe – użytkownik od razu widzi efekty wykonywanych akcji, np. filtrowania danych, zatwierdzania rezerwacji czy edycji sprzętu.  Aplikacja została również zaprojektowana z myślą o stabilności. W przypadku problemów z połączeniem do bazy danych, użytkownik otrzymuje czytelny komunikat. Każda operacja jest wyposażona w obsługę błędów. System zawiera mechanizmy walidacji danych wejściowych, które zapobiegają zapisowi niekompletnych lub błędnych informacji, zwiększając bezpieczeństwo i niezawodność działania aplikacji. Użytkownik otrzymuje jasne i jednoznaczne komunikaty o wymaganych poprawkach.
+
+\section{Wykorzystane technologie}
+\label{sec:wykorzystaneTechnologie}
+
+Projekt został stworzony w środowisku IntelliJ IDEA, przy użyciu następujących technologii:
+
+\begin{enumerate}%[1)]
+\item Java SE – język programowania wykorzystywany do tworzenia logiki aplikacji;
+\item Swing – biblioteka do tworzenia graficznego interfejsu użytkownika, pozwalająca na budowę wielopanelowych formularzy. ;
+\item JDBC – technologia do łączenia się z bazą danych MySQL;
+\item MySQL – relacyjna baza danych odpowiedzialna za przechowywanie wszystkich danych aplikacji (użytkownicy, sprzęt, rezerwacje, wypożyczenia).;
+\item iText – biblioteka umożliwiająca generowanie dokumentów PDF.
+\end{enumerate}
+
+
+% ------------------------
+\section{Wymagania systemowe}
+\label{sec:wymaganiaSystemowe}
+Aby uruchomić aplikację oraz w pełni korzystać ze wszystkich funkcji, użytkownik powinien zapewnić następujące środowisko:
+\begin{enumerate}%[1)]
+\item System operacyjny: Windows 10 lub nowszy;
+\item Java Development Kit (JDK) w wersji 8 lub wyższej;
+\item Zainstalowany serwer MySQL: z utworzoną bazą danych o strukturze zgodnej z diagramem ERD;
+\item Środowisko programistyczne IntelliJ IDEA (zalecane do dalszego rozwoju);
+\item Biblioteki zewnętrzne (np. iText).
+
+\end{enumerate}
+

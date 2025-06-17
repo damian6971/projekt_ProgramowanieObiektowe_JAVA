@@ -1,0 +1,141 @@
+\chapter{Interfejs użytkownika i obsługa aplikacji}
+\label{cha:InterfejsUzytkownika}
+
+W tym rozdziale przedstawiono interfejs graficzny Wypożyczalni sprzętu budowlanego. Skupiono się na czytelności, oraz intuicyjności. Zaprezentowano widoki dla dwóch głównych ról systemu – użytkownika (klienta) oraz administratora. Omówiono poszczególne formularze, rozmieszczenie przycisków oraz zasady, którymi kierowano się przy projektowaniu interfejsu. Przy tworzeniu GUI wykorzystano bibliotekę Swing.
+
+% ********************
+\section{Widok użytkownika}
+
+Rola klienta obejmuje możliwość przeglądania sprzętu, dokonywania rezerwacji oraz zarządzania swoimi danymi. Udostępniono następujące panele:
+\subsection{Ekran powitalny}
+
+Po uruchomieniu aplikacji użytkownik trafia na ekran powitalny (WelcomeForm.java). Został on zaprojektowany z myślą o czytelności i prostocie – w centralnej części znajduje się logo oraz nazwa aplikacji. Poniżej zamieszczono krótki opis funkcjonalności systemu oraz dwa przyciski:
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{figures/panelPowitalny.jpg}
+    \caption{Panel powitalny.}
+    \label{fig:panelPowitalny}
+    \small{Źródło: Opracowanie Własne}
+\end{figure}
+\clearpage
+
+
+
+
+\subsection{Panel logowania}
+Po kliknięciu przycisku „Przejdź dalej” z panelu powitalnego, użytkownik zostaje przekierowany do formularza logowania. Panel logowania umożliwia zalogowanie się do istniejącego już konta użytkownika lub zarejestrowanie nowego użytkownika. Pod formularzem znajdują się trzy przyciski:
+\vspace{-0.2cm}
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=0.5\linewidth]{figures/panelLogowania.png}
+    \caption{Panel logowania.}
+    \label{fig:panelLogowania}
+    \small{Źródło: Opracowanie własne}
+\end{figure}
+
+
+\subsection{Panel użytkownika}
+Po poprawnym zalogowaniu się do systemu jako klient, użytkownik zostaje przeniesiony do głównego panelu klienta. Jest to miejsce, z którego można przejść do wszystkich funkcji dostępnych dla zwykłego użytkownika.
+\vspace{-0.2cm} 
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=0.5\linewidth]{figures/PanelKlienta.png}
+    \caption{Panel klienta}
+    \label{fig:panelKlienta}
+    \small{Źródło: Opracowanie własne}
+\end{figure}
+\clearpage
+
+\subsection{Edycja danych użytkownika}
+Po kliknięciu przycisku „Profil Moje dane” z panelu klienta, użytkownik dostaje możliwość edycji swoich danych. Panel umożliwia użytkownikowi edytowanie swoich danych osobowych,nazwy użytkownika, numeru telefonu, adresu e-mail lub hasła.
+\vspace{-0.2cm}
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=0.7\linewidth]{figures/PanelEdytowaniaDanych.png}
+    \caption{Formularz umożliwia samodzielne zarządzanie kontem}
+    \label{fig:panel_edycji_danych}
+    \small{Źródło: Opracowanie własne}
+\end{figure}
+\clearpage
+
+\subsection{Formularz rezerwacji sprzętu}
+Formularz rezerwacji to kluczowa funkcja umożliwiająca użytkownikowi dokonanie rezerwacji wybranego sprzętu. 
+\vspace{-0.4cm}
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=0.88\textwidth]{figures/PanelRezerwacjiSprzetu.png}
+    \caption{Panel rezerwacji sprzętu}
+    \label{fig:panelRezerwacjiSprzetow}
+    \small{Źródło: Opracowanie własne}
+\end{figure}
+\clearpage
+
+\section{Widok administratora}
+Panel administratora to główne centrum zarządzania systemem. Po zalogowaniu jako administrator użytkownik otrzymuje dostęp do kluczowych funkcji związanych z obsługą wypożyczalni:
+\begin{enumerate}
+    \item Zarządzanie rezerwacjami – administrator może przeglądać listę rezerwacji oczekujących na akceptację oraz podejmować decyzje o ich zatwierdzeniu lub odrzuceniu;
+    \item Zarządzanie sprzętem – umożliwia dodawanie, edytowanie i usuwanie sprzętu dostępnego w wypożyczalni;
+    \item Podgląd aktywnych wypożyczeń – administrator ma wgląd w aktualne wypożyczenia. Może je usuwać oraz generować paragony;
+    \item Podgląd wszystkich użytkowników – administrator może przeglądać konta użytkowników i usuwać wybrane konta.
+\end{enumerate}
+
+\subsection{Panel administratora}
+Po zalogowaniu do systemu jako administrator, użytkownik zostaje przeniesiony do panelu administratora. Jest to centralny formularz zarządzający systemem wypożyczalni. Z poziomu tego widoku dostępne są wszystkie funkcje administracyjne.
+\vspace{-0.2cm}
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=0.7\linewidth]{figures/PanelAdministratora.png}
+    \caption{Panel administratora}
+    \label{fig:panel_edycji_danych}
+    \small{Źródło: Opracowanie własne}
+\end{figure}
+\clearpage
+
+\subsection{Zarządzanie sprzętem}
+Jedną z głównych możliwośći programu jest możliwosć zarządzania sprzętem przez administratora w aplikacji.W tym celu udostępniono osobny formularz umożliwiający pełną obsługę listy sprzętów. 
+\vspace{-0.2cm}
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=0.7\linewidth]{figures/ListaSprzetu.png}
+    \caption{Lista sprzętu}
+    \label{fig:listaSprzetu}
+    \small{Źródło: Opracowanie własne}
+\end{figure}
+
+\subsection{Wszyscy użytkownicy}
+Ten panel wyświetla pełną listę zarejestrowanych użytkowników systemu w formie tabeli. 
+Administrator ma możliwość usunięcia dowolnego konta użytkownika z poziomu tego widoku.
+\vspace{-0.3cm}
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=\textwidth]{figures/WszyscyUzytkownicy.png}
+    \caption{Panel administratora – przegląd wszystkich użytkowników}
+    \label{fig:wszyscyUzytkownicy}
+    \vspace{-0.2cm}
+    \small{Źródło: Opracowanie własne}
+\end{figure}
+
+
+\subsection{Rezerwacje klientów}
+Panel Zarządzania rezerwacjami umożliwia administratorowi przeglądanie listy złożonych przez użytkowników rezerwacji próśb, które oczekują na akceptację. Dla każdej rezerwacji widoczne są szczegółowe dane. Ten formularz stanowi centralne narzędzie kontroli nad przebiegiem procesu wypożyczania i zapewnia, że wszystkie zgłoszenia są weryfikowane przed ich realizacją. Administrator może zaakceptować lub odrzucić każdą rezerwację za pomocą przycisków
+\vspace{-0.2cm}
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=0.7\linewidth]{figures/zarzadzanieRezerwacjami.png}
+    \caption{Panel administratora – zarządzanie rezerwacjami}
+    \label{fig:zarzadzanieRezerwacjami}
+    \small{Źródło: Opracowanie własne}
+\end{figure}
+
+\subsection{Zarządzanie wypożyczeniami klientów}
+Ten formularz umożliwia administratorowi przeglądaniewypożyczeń sprzętu przez użytkowników. W tabeli widoczne są szczegółowe dane dotyczące każdej wypożyczonej pozycji. Administrator ma możliwość wygenerowania paragonu w formacie PDF dla wybranego wypożyczenia lub usunięcia wypożyczenia.
+\vspace{-0.5cm}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.65\linewidth]{figures/ZarzadzanieWypozyczeniami.png}
+    \captionsetup{font=footnotesize, skip=2pt}
+    \caption{Panel administratora – zarządzanie wypożyczeniami}
+    \label{fig:zarzadzanieWypozyczeniami}
+    \small{Źródło: Opracowanie własne}
+\end{figure}
